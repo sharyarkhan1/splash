@@ -1,0 +1,20 @@
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php(?:[?\s]) [NC]
+RewriteRule ^index\.php$ ./ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.*/)?about\.php(?:[?\s]) [NC]
+RewriteRule ^about\.php$ about [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.*/)?services\.php(?:[?\s]) [NC]
+RewriteRule ^services\.php$ services [R=301,L]
+
+RewriteRule ^gallery/?$ gallery.php [L]
+RewriteRule ^reviews/?$ reviews.php [L]
+RewriteRule ^areas/?$ areas-we-cover [R=301,L]
+RewriteRule ^areas-we-cover/?$ areas.php [L]
+RewriteRule ^contact/?$ contact.php [L]
+RewriteRule ^request-a-call-back/?$ request-a-call-back.php [L]
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^services/([a-z0-9-]+)/?$ service.php?slug=$1 [L,QSA,NC]
+RewriteRule ^services/?$ services.php [L]
